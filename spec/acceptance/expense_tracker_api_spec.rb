@@ -12,6 +12,12 @@ module ExpenseTracker
 				'date' => '2020-05-28'
 			}
 
+			tea = {
+				'payee' => 'Starbucks',
+				'amount' => 3.0,
+				'date' => '2020-05-28'
+			}
+
 			post '/expenses', JSON.generate(coffee)
 		end
 	end
