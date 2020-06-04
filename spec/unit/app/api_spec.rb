@@ -67,7 +67,7 @@ module ExpenseTracker
 
 				it 'returns the expenses records as JSON' do
 					get "/expenses/#{date}"
-					expect(response).to include('some_date' => 'data')
+					expect(response).to include(JSON.generate({'some_date' => 'data'}))
 				end
 				it 'responds with 200 (OK)' do
 					get "/expenses/#{date}"
@@ -85,7 +85,7 @@ module ExpenseTracker
 
 				it 'returns an empty array as JSON' do
 					get "/expenses/#{date}"
-					expect(response).to eq([])
+					expect(response).to eq(JSON.generate([]))
 				end
 
 				it 'responds with 200 (No expenses for the date)' do
